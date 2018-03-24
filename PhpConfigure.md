@@ -1,28 +1,66 @@
-`configure' configures this package to adapt to many kinds of systems.
+&copy;PHP Group
 
-Usage: ./configure [OPTION]... [VAR=VALUE]...
+编译安装PHP configure详细参数
+===
+configure    ./configure 通常用来配置安装软件的选项和参数
 
-To assign environment variables (e.g., CC, CFLAGS...), specify them as
-VAR=VALUE.  See below for descriptions of some of the useful variables.
+用法：
 
-Defaults for the options are specified in brackets.
+    ./configure [OPTION]... [VAR=VALUE]...
 
-Configuration:
-  -h, --help              display this help and exit
-      --help=short        display options specific to this package
-      --help=recursive    display the short help of all the included packages
-  -V, --version           display version information and exit
-  -q, --quiet, --silent   do not print `checking ...' messages
-      --cache-file=FILE   cache test results in FILE [disabled]
-  -C, --config-cache      alias for `--cache-file=config.cache'
-  -n, --no-create         do not create output files
-      --srcdir=DIR        find the sources in DIR [configure dir or `..']
+
+######要分配使用环境变量（例如，CC，CFLAGS ...），请将它们指定为VAR= VALUE。 请参阅下面的一些有用变量的描述。######
+
+选择使用下面的选项和参数
+
+Configuration: 
+
+    -h, --help              显示此帮助并退出
+
+    --help=short            只显示本次编译软件包的选项
+
+    --help=recursive        显示所有包含的软件包的简短帮助
+
+    -V, --version           显示版本信息并退出
+
+    -q, --quiet, --silent   不要打印"checking..." 消息
+
+    --cache-file=FILE       在FILE(路径)中缓存测试结果[disabled]
+
+    -C, --config-cache      '--cache-file = config.cache'的别名
+
+    -n, --no-create         不创建输出文件
+
+    --srcdir=DIR            在DIR[配置目录或\'..']中查找源代码
 
 Installation directories:
-  --prefix=PREFIX         install architecture-independent files in PREFIX
-                          [/usr/local]
-  --exec-prefix=EPREFIX   install architecture-dependent files in EPREFIX
-                          [PREFIX]
+
+    --prefix=PREFIX         安装在编译的软件在目录PREFIX [/usr/local] 中 
+
+    --exec-prefix=EPREFIX   在EPREFIX[PREFIX]中安装与体系结构（编译相关）有关的文件 
+
+
+
+*>默认情况下 'make install' 将安装所有文件在 '/usr/local/bin'，'/usr/local/lib' 中。你可以指定一个使用'--prefix'的  /usr/local 以外的安装前缀，例如--prefix = $ HOME* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 By default, `make install' will install all the files in
 `/usr/local/bin', `/usr/local/lib' etc.  You can specify
