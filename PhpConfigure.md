@@ -40,111 +40,131 @@ Installation directories:
     --exec-prefix=EPREFIX   在EPREFIX[PREFIX]中安装与体系结构（编译相关）有关的文件 
 
 
-
-*>默认情况下 'make install' 将安装所有文件在 '/usr/local/bin'，'/usr/local/lib' 中。你可以指定一个使用'--prefix'的  /usr/local 以外的安装前缀，例如--prefix = $ HOME* 
-
+默认情况下 `make install` 将安装所有文件在 `/usr/local/bin` ，`/usr/local/lib` 中。你可以指定一个使用`--prefix`的  `/usr/local` 以外的安装前缀，例如 `--prefix = $HOME`
 
 
+为了更好地控制，请使用下面的选项。
 
+微调安装目录：
 
+    --bindir=DIR            用户可执行文件 [EPREFIX/bin]
 
+    --sbindir=DIR           系统管理员可执行文件 [EPREFIX/sbin]
 
+    --libexecdir=DIR        程序可执行文件 [EPREFIX/libexec]
 
+    --sysconfdir=DIR        只读的单机数据 [PREFIX/etc]
 
+    --sharedstatedir=DIR    可修改的独立于架构的数据 [PREFIX/com]
 
+    --localstatedir=DIR     可修改的单机数据 [PREFIX/var]
 
+    --libdir=DIR            object code libraries [EPREFIX/lib]
 
+    --includedir=DIR        C header files [PREFIX/include]
 
+    --oldincludedir=DIR     C header files for non-gcc [/usr/include]
 
+    --datarootdir=DIR       read-only arch.-independent data root [PREFIX/share]
 
+    --datadir=DIR           只读架构独立数据 [DATAROOTDIR]
 
+    --infodir=DIR           info 文件 [DATAROOTDIR/info]
 
+    --localedir=DIR         依赖于区域的数据 [DATAROOTDIR/locale]
 
+    --mandir=DIR            man documentation [DATAROOTDIR/man]
 
+    --docdir=DIR            文档 root [DATAROOTDIR/doc/PACKAGE]
 
-By default, `make install' will install all the files in
-`/usr/local/bin', `/usr/local/lib' etc.  You can specify
-an installation prefix other than `/usr/local' using `--prefix',
-for instance `--prefix=$HOME'.
+    --htmldir=DIR           html 文档 [DOCDIR]
 
-For better control, use the options below.
+    --dvidir=DIR            dvi 文档 [DOCDIR]
 
-Fine tuning of the installation directories:
-  --bindir=DIR            user executables [EPREFIX/bin]
-  --sbindir=DIR           system admin executables [EPREFIX/sbin]
-  --libexecdir=DIR        program executables [EPREFIX/libexec]
-  --sysconfdir=DIR        read-only single-machine data [PREFIX/etc]
-  --sharedstatedir=DIR    modifiable architecture-independent data [PREFIX/com]
-  --localstatedir=DIR     modifiable single-machine data [PREFIX/var]
-  --libdir=DIR            object code libraries [EPREFIX/lib]
-  --includedir=DIR        C header files [PREFIX/include]
-  --oldincludedir=DIR     C header files for non-gcc [/usr/include]
-  --datarootdir=DIR       read-only arch.-independent data root [PREFIX/share]
-  --datadir=DIR           read-only architecture-independent data [DATAROOTDIR]
-  --infodir=DIR           info documentation [DATAROOTDIR/info]
-  --localedir=DIR         locale-dependent data [DATAROOTDIR/locale]
-  --mandir=DIR            man documentation [DATAROOTDIR/man]
-  --docdir=DIR            documentation root [DATAROOTDIR/doc/PACKAGE]
-  --htmldir=DIR           html documentation [DOCDIR]
-  --dvidir=DIR            dvi documentation [DOCDIR]
-  --pdfdir=DIR            pdf documentation [DOCDIR]
-  --psdir=DIR             ps documentation [DOCDIR]
+    --pdfdir=DIR            pdf 文档 [DOCDIR]
+
+    --psdir=DIR             ps 文档 [DOCDIR]
 
 System types:
-  --build=BUILD     configure for building on BUILD [guessed]
-  --host=HOST       cross-compile to build programs to run on HOST [BUILD]
-  --target=TARGET   configure for building compilers for TARGET [HOST]
+
+    --build=BUILD     configure for building on BUILD [guessed]
+
+    --host=HOST       cross-compile to build programs to run on HOST [BUILD]
+
+    --target=TARGET   configure for building compilers for TARGET [HOST]
 
 Optional Features and Packages:
-  --disable-option-checking  ignore unrecognized --enable/--with options
-  --disable-FEATURE       do not include FEATURE (same as --enable-FEATURE=no)
-  --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]
-  --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
-  --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
-  --with-libdir=NAME      Look for libraries in .../NAME rather than .../lib
-  --disable-rpath         Disable passing additional runtime library
-                          search paths
-  --enable-re2c-cgoto     Enable -g flag to re2c to use computed goto gcc extension
-  --disable-gcc-global-regs
-                          whether to enable GCC global register variables
+
+    --disable-option-checking  ignore unrecognized --enable/--with options
+
+    --disable-FEATURE       do not include FEATURE (same as --enable-FEATURE=no)
+
+    --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]
+
+    --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
+
+    --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
+
+    --with-libdir=NAME      Look for libraries in .../NAME rather than .../lib
+
+    --disable-rpath         Disable passing additional runtime library search paths
+
+    --enable-re2c-cgoto     Enable -g flag to re2c to use computed goto gcc extension
+
+    --disable-gcc-global-regs  whether to enable GCC global register variables
 
 SAPI modules:
 
-  --with-apxs2=FILE       Build shared Apache 2.0 Handler module. FILE is the optional
-                          pathname to the Apache apxs tool apxs
-  --disable-cli           Disable building CLI version of PHP
-                          (this forces --without-pear)
-  --enable-embed=TYPE     EXPERIMENTAL: Enable building of embedded SAPI library
-                          TYPE is either 'shared' or 'static'. TYPE=shared
-  --enable-fpm            Enable building of the fpm SAPI executable
-  --with-fpm-user=USER    Set the user for php-fpm to run as. (default: nobody)
-  --with-fpm-group=GRP    Set the group for php-fpm to run as. For a system user, this
-                          should usually be set to match the fpm username (default: nobody)
-  --with-fpm-systemd      Activate systemd integration
-  --with-fpm-acl          Use POSIX Access Control Lists
-  --with-litespeed        Build PHP as litespeed module
-  --enable-phpdbg            Build phpdbg
-  --enable-phpdbg-webhelper  Build phpdbg web SAPI support
-  --enable-phpdbg-debug      Build phpdbg in debug mode
-  --disable-cgi           Disable building CGI version of PHP
+    --with-apxs2=FILE       Build shared Apache 2.0 Handler module. FILE is the optional  pathname to the Apache apxs tool apxs
+    --disable-cli           Disable building CLI version of PHP (this forces --without-pear)
+
+    --enable-embed=TYPE     EXPERIMENTAL: Enable building of embedded SAPI library TYPE is either 'shared' or 'static'. TYPE=shared
+
+    --enable-fpm            Enable building of the fpm SAPI executable
+
+    --with-fpm-user=USER    Set the user for php-fpm to run as. (default: nobody)
+
+    --with-fpm-group=GRP    Set the group for php-fpm to run as. For a system user, this should usually be set to match the fpm username (default: nobody)
+
+    --with-fpm-systemd      Activate systemd integration
+
+    --with-fpm-acl          Use POSIX Access Control Lists
+
+    --with-litespeed        Build PHP as litespeed module
+
+    --enable-phpdbg            Build phpdbg
+
+    --enable-phpdbg-webhelper  Build phpdbg web SAPI support
+
+    --enable-phpdbg-debug      Build phpdbg in debug mode
+
+    --disable-cgi           Disable building CGI version of PHP
 
 General settings:
 
-  --enable-gcov           Enable GCOV code coverage (requires LTP) - FOR DEVELOPERS ONLY!!
-  --enable-debug          Compile with debugging symbols
-  --with-layout=TYPE      Set how installed files will be laid out.  Type can
-                          be either PHP or GNU [PHP]
-  --with-config-file-path=PATH
-                          Set the path in which to look for php.ini [PREFIX/lib]
-  --with-config-file-scan-dir=PATH
-                          Set the path where to scan for configuration files
-  --enable-sigchild       Enable PHP's own SIGCHLD handler
-  --enable-libgcc         Enable explicitly linking against libgcc
-  --disable-short-tags    Disable the short-form <? start tag by default
-  --enable-dmalloc        Enable dmalloc
-  --disable-ipv6          Disable IPv6 support
-  --enable-dtrace         Enable DTrace support
-  --enable-fd-setsize     Set size of descriptor sets
+    --enable-gcov           Enable GCOV code coverage (requires LTP) - FOR DEVELOPERS ONLY!!
+
+    --enable-debug          Compile with debugging symbols
+
+    --with-layout=TYPE      Set how installed files will be laid out.  Type can be either PHP or GNU [PHP]
+
+    --with-config-file-path=PATH  Set the path in which to look for php.ini [PREFIX/lib]
+
+    --with-config-file-scan-dir=PATH  Set the path where to scan for configuration files
+
+    --enable-sigchild       Enable PHP's own SIGCHLD handler
+
+    --enable-libgcc         Enable explicitly linking against libgcc
+
+    --disable-short-tags    Disable the short-form <? start tag by default
+
+    --enable-dmalloc        Enable dmalloc
+
+    --disable-ipv6          Disable IPv6 support
+
+    --enable-dtrace         Enable DTrace support
+
+    --enable-fd-setsize     Set size of descriptor sets
 
 Extensions:
 
@@ -158,79 +178,104 @@ Extensions:
       o foobar package install prefix is /usr/local/foobar/
 
 
-  --disable-all           Disable all extensions which are enabled by default
+    --disable-all           Disable all extensions which are enabled by default
 
-  --disable-libxml        Disable LIBXML support
-  --with-libxml-dir=DIR   LIBXML: libxml2 install prefix
-  --with-openssl=DIR      Include OpenSSL support (requires OpenSSL >= 1.0.1)
-  --with-kerberos=DIR     OPENSSL: Include Kerberos support
-  --with-system-ciphers   OPENSSL: Use system default cipher list instead of hardcoded value
-  --with-pcre-regex=DIR   Include Perl Compatible Regular Expressions support.
+    --disable-libxml        Disable LIBXML support
+    --with-libxml-dir=DIR   LIBXML: libxml2 install prefix
+    --with-openssl=DIR      Include OpenSSL support (requires OpenSSL >= 1.0.1)
+    --with-kerberos=DIR     OPENSSL: Include Kerberos support
+    --with-system-ciphers   OPENSSL: Use system default cipher list instead of hardcoded value
+    --with-pcre-regex=DIR   Include Perl Compatible Regular Expressions support.
                           DIR is the PCRE install prefix BUNDLED
-  --with-pcre-jit         Enable PCRE JIT functionality (BUNDLED only)
-  --with-pcre-valgrind=DIR
+    --with-pcre-jit         Enable PCRE JIT functionality (BUNDLED only)
+    --with-pcre-valgrind=DIR
                           Enable PCRE valgrind support. Developers only!
-  --without-sqlite3=DIR   Do not include SQLite3 support. DIR is the prefix to
+    --without-sqlite3=DIR   Do not include SQLite3 support. DIR is the prefix to
                           SQLite3 installation directory.
-  --with-zlib=DIR         Include ZLIB support (requires zlib >= 1.0.9)
-  --with-zlib-dir=<DIR>   Define the location of zlib install directory
-  --enable-bcmath         Enable bc style precision math functions
-  --with-bz2=DIR          Include BZip2 support
-  --enable-calendar       Enable support for calendar conversion
-  --disable-ctype         Disable ctype functions
-  --with-curl=DIR         Include cURL support
-  --enable-dba            Build DBA with bundled modules. To build shared DBA
+    --with-zlib=DIR         Include ZLIB support (requires zlib >= 1.0.9)
+    --with-zlib-dir=<DIR>   Define the location of zlib install directory
+    --enable-bcmath         Enable bc style precision math functions
+    --with-bz2=DIR          Include BZip2 support
+    --enable-calendar       Enable support for calendar conversion
+    --disable-ctype         Disable ctype functions
+    --with-curl=DIR         Include cURL support
+    --enable-dba            Build DBA with bundled modules. To build shared DBA
                           extension use --enable-dba=shared
-  --with-qdbm=DIR         DBA: QDBM support
-  --with-gdbm=DIR         DBA: GDBM support
-  --with-ndbm=DIR         DBA: NDBM support
-  --with-db4=DIR          DBA: Oracle Berkeley DB 4.x or 5.x support
-  --with-db3=DIR          DBA: Oracle Berkeley DB 3.x support
-  --with-db2=DIR          DBA: Oracle Berkeley DB 2.x support
-  --with-db1=DIR          DBA: Oracle Berkeley DB 1.x support/emulation
-  --with-dbm=DIR          DBA: DBM support
-  --with-tcadb=DIR        DBA: Tokyo Cabinet abstract DB support
-  --with-lmdb=DIR        DBA: Lightning memory-mapped database support
-  --without-cdb=DIR       DBA: CDB support (bundled)
-  --disable-inifile       DBA: INI support (bundled)
-  --disable-flatfile      DBA: FlatFile support (bundled)
-  --disable-dom           Disable DOM support
-  --with-libxml-dir=DIR   DOM: libxml2 install prefix
-  --with-enchant=DIR      Include enchant support.
+    --with-qdbm=DIR         DBA: QDBM support
+    --with-gdbm=DIR         DBA: GDBM support
+    --with-ndbm=DIR         DBA: NDBM support
+    --with-db4=DIR          DBA: Oracle Berkeley DB 4.x or 5.x support
+    --with-db3=DIR          DBA: Oracle Berkeley DB 3.x support
+    --with-db2=DIR          DBA: Oracle Berkeley DB 2.x support
+    --with-db1=DIR          DBA: Oracle Berkeley DB 1.x support/emulation
+    --with-dbm=DIR          DBA: DBM support
+    --with-tcadb=DIR        DBA: Tokyo Cabinet abstract DB support
+    --with-lmdb=DIR        DBA: Lightning memory-mapped database support
+    --without-cdb=DIR       DBA: CDB support (bundled)
+    --disable-inifile       DBA: INI support (bundled)
+    --disable-flatfile      DBA: FlatFile support (bundled)
+    --disable-dom           Disable DOM support
+    --with-libxml-dir=DIR   DOM: libxml2 install prefix
+    --with-enchant=DIR      Include enchant support.
                           GNU Aspell version 1.1.3 or higher required.
-  --enable-exif           Enable EXIF (metadata from images) support
-  --disable-fileinfo      Disable fileinfo support
-  --disable-filter        Disable input filter support
-  --with-pcre-dir         FILTER: pcre install prefix
-  --enable-ftp            Enable FTP support
-  --with-openssl-dir=DIR  FTP: openssl install prefix
-  --with-gd=DIR           Include GD support.  DIR is the GD library base
+    --enable-exif           Enable EXIF (metadata from images) support
+    --disable-fileinfo      Disable fileinfo support
+    --disable-filter        Disable input filter support
+    --with-pcre-dir         FILTER: pcre install prefix
+    --enable-ftp            Enable FTP support
+    --with-openssl-dir=DIR  FTP: openssl install prefix
+    --with-gd=DIR           Include GD support.  DIR is the GD library base
                           install directory BUNDLED
+                          
   --with-webp-dir=DIR      GD: Set the path to libwebp install prefix
-  --with-jpeg-dir=DIR     GD: Set the path to libjpeg install prefix
-  --with-png-dir=DIR      GD: Set the path to libpng install prefix
-  --with-zlib-dir=DIR     GD: Set the path to libz install prefix
-  --with-xpm-dir=DIR      GD: Set the path to libXpm install prefix
-  --with-freetype-dir=DIR GD: Set the path to FreeType 2 install prefix
-  --enable-gd-jis-conv    GD: Enable JIS-mapped Japanese font support
-  --with-gettext=DIR      Include GNU gettext support
-  --with-gmp=DIR          Include GNU MP support
-  --with-mhash=DIR        Include mhash support
-  --disable-hash          Disable hash support
-  --without-iconv=DIR     Exclude iconv support
-  --with-imap=DIR         Include IMAP support. DIR is the c-client install prefix
-  --with-kerberos=DIR     IMAP: Include Kerberos support. DIR is the Kerberos install prefix
-  --with-imap-ssl=DIR     IMAP: Include SSL support. DIR is the OpenSSL install prefix
-  --with-interbase=DIR    Include Firebird support.  DIR is the Firebird base
+
+    --with-jpeg-dir=DIR     GD: Set the path to libjpeg install prefix
+                            
+
+    --with-png-dir=DIR      GD: Set the path to libpng install prefix
+
+    --with-zlib-dir=DIR     GD: Set the path to libz install prefix
+
+    --with-xpm-dir=DIR      GD: Set the path to libXpm install prefix
+
+    --with-freetype-dir=DIR GD: Set the path to FreeType 2 install prefix
+
+    --enable-gd-jis-conv    GD: Enable JIS-mapped Japanese font support
+
+    --with-gettext=DIR      Include GNU gettext support
+ 
+   --with-gmp=DIR          Include GNU MP support
+ 
+   --with-mhash=DIR        Include mhash support
+
+    --disable-hash          Disable hash support
+
+    --without-iconv=DIR     Exclude iconv support
+
+    --with-imap=DIR         Include IMAP support. DIR is the c-client install prefix
+
+    --with-kerberos=DIR     IMAP: Include Kerberos support. DIR is the Kerberos install prefix
+
+    --with-imap-ssl=DIR     IMAP: Include SSL support. DIR is the OpenSSL install prefix
+ 
+    --with-interbase=DIR    Include Firebird support.  DIR is the Firebird base
                           install directory /opt/firebird
-  --enable-intl           Enable internationalization support
-  --with-icu-dir=DIR      Specify where ICU libraries and headers can be found
-  --disable-json          Disable JavaScript Object Serialization support
-  --with-ldap=DIR         Include LDAP support
-  --with-ldap-sasl=DIR    LDAP: Include Cyrus SASL support
-  --enable-mbstring       Enable multibyte string support
-  --disable-mbregex       MBSTRING: Disable multibyte regex support
-  --disable-mbregex-backtrack
+
+    --enable-intl           Enable internationalization support
+ 
+   --with-icu-dir=DIR      Specify where ICU libraries and headers can be found
+
+    --disable-json          Disable JavaScript Object Serialization support
+
+    --with-ldap=DIR         Include LDAP support
+
+    --with-ldap-sasl=DIR    LDAP: Include Cyrus SASL support
+
+    --enable-mbstring       Enable multibyte string support
+
+    --disable-mbregex       MBSTRING: Disable multibyte regex support
+
+    --disable-mbregex-backtrack
                           MBSTRING: Disable multibyte regex backtrack check
   --with-libmbfl=DIR      MBSTRING: Use external libmbfl.  DIR is the libmbfl base
                           install directory BUNDLED
@@ -364,6 +409,7 @@ Extensions:
                           Disable support for the MySQL compressed protocol in mysqlnd
   --with-zlib-dir=DIR     mysqlnd: Set the path to libz install prefix
 
+
 PEAR:
 
   --with-pear=DIR         Install PEAR in DIR [PREFIX/lib/php]
@@ -394,27 +440,28 @@ Libtool:
   --with-pic              Try to use only PIC/non-PIC objects default=use both
   --with-tags=TAGS        Include additional configurations automatic
 
+影响环境变量的值：
 
-Some influential environment variables:
-  CC          C compiler command
-  CFLAGS      C compiler flags
-  LDFLAGS     linker flags, e.g. -L<lib dir> if you have libraries in a
-              nonstandard directory <lib dir>
-  LIBS        libraries to pass to the linker, e.g. -l<library>
-  CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I<include dir> if
-              you have headers in a nonstandard directory <include dir>
-  CPP         C preprocessor
-  YACC        The `Yet Another Compiler Compiler' implementation to use.
-              Defaults to the first program found out of: `bison -y', `byacc',
-              `yacc'.
-  YFLAGS      The list of arguments that will be passed by default to $YACC.
-              This script will default YFLAGS to the empty string to avoid a
-              default value of `-d' given by some make applications.
-  CXX         C++ compiler command
-  CXXFLAGS    C++ compiler flags
-  CXXCPP      C++ preprocessor
+    CC          C compiler command
 
-Use these variables to override the choices made by `configure' or to help
+    CFLAGS      C compiler flags
+
+    LDFLAGS     linker flags, e.g. -L<lib dir> if you have libraries in a nonstandard directory <lib dir>
+
+    LIBS        libraries to pass to the linker, e.g. -l<library>
+
+    CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I<include dir> if you have headers in a nonstandard directory <include dir>
+
+    CPP         C preprocessor
+
+    YACC        The Yet Another Compiler Compiler' implementation to use. Defaults to the first program found out of: `bison -y`, `byacc`,`yacc`.YFLAGS
+
+    CXX         C++ compiler command
+
+    CXXFLAGS    C++ compiler flags
+
+    CXXCPP      C++ preprocessor
+
+Use these variables to override the choices made by `configure` or to help
 it to find libraries and programs with nonstandard names/locations.
-
 Report bugs to the package provider.
